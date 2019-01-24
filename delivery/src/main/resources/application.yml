@@ -1,0 +1,30 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          content-type: application/json
+          destination: queue.log.messages
+          binder: local_rabbit
+          group: logMessageConsumers
+        output:
+          content-type: application/json
+          destination: queue.pretty.log.messages
+          binder: local_rabbit
+      binders:
+        local_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+                virtual-host: /
+server:
+  port: 8081
+management:
+  health:
+    binders:
+      enabled: true
