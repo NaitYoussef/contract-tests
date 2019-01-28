@@ -13,16 +13,20 @@ public class BookInventory {
 
     private final Map<String, Book> inventory = new HashMap<>();
 
+    public Flux<Book> allBooks() {
+        return Flux.fromIterable(inventory.values());
+    }
+
+    public Mono<Book> findBook(String bookId) {
+        return Mono.fromSupplier(() -> inventory.get(bookId));
+    }
+
     public void addBook(Book book) {
         inventory.put(book.getId(), book);
     }
 
     public void removeAllStocks() {
         inventory.clear();
-    }
-
-    public Flux<Book> allBooks() {
-        return Flux.fromIterable(inventory.values());
     }
 
     public Mono<Integer> reduceStock(String bookId, Integer total) {

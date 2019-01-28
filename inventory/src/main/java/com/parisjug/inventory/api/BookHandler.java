@@ -22,10 +22,9 @@ public class BookHandler {
         this.bookInventory = bookInventory;
         this.bookIdGenerator = bookIdGenerator;
     }
-
     public Mono<ServerResponse> allBooks(ServerRequest request) {
         return ok().contentType(MediaType.APPLICATION_JSON)
-                .body(BodyInserters.fromPublisher(bookInventory.allBooks(), Book.class));
+                .body(bookInventory.allBooks(), Book.class);
     }
 
     public Mono<ServerResponse> createBook(ServerRequest request) {
@@ -46,5 +45,11 @@ public class BookHandler {
     private Book assignRandomId(Book book) {
         book.setId(bookIdGenerator.randomId());
         return book;
+    }
+
+    public Mono<ServerResponse> book(ServerRequest request) {
+        String bookId = request.pathVariable("id");
+        return ok().contentType(MediaType.APPLICATION_JSON)
+                .body(bookInventory.findBook(bookId), Book.class);
     }
 }

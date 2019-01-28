@@ -23,6 +23,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Collections;
 
+import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 
 @RunWith(SpringRunner.class)
@@ -40,11 +41,13 @@ public class InventoryApplicationTests {
 	private BookIdGenerator bookIdGenerator;
 
 	private Book java = new Book("d4d37e73-77a0-4616-8bd2-5ed983d45d14","Java", BigDecimal.valueOf(100), 100);
+	private Book kotlin = new Book("8364948b-6221-4cd8-9fd9-db0d17d45ef8","Kotlin", BigDecimal.valueOf(120), 20);
 
 	@Before
 	public void before() {
 		Mockito.when(bookIdGenerator.randomId()).thenReturn("dc8493d6-e2e3-47da-a806-d1e8ff7cd4df");
 		bookInventory.addBook(java);
+		bookInventory.addBook(kotlin);
 	}
 
 	@After
@@ -82,7 +85,17 @@ public class InventoryApplicationTests {
 				.accept(MediaType.APPLICATION_JSON)
 				.exchange()
 				.expectStatus().isOk()
-				.expectBodyList(Book.class).isEqualTo(singletonList(java));
+				.expectBodyList(Book.class).isEqualTo(asList(java, kotlin));
+	}
+
+	@Test
+	public void should_retrieve_book_from_inventory() {
+		webTestClient
+				.get().uri("/books/d4d37e73-77a0-4616-8bd2-5ed983d45d14")
+				.accept(MediaType.APPLICATION_JSON)
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody(Book.class).isEqualTo(java);
 	}
 
 	@Test

@@ -17,6 +17,7 @@ public class BookRouter {
         return route()
                 .path("/books", builder -> builder
                         .GET("", accept(APPLICATION_JSON), bookHandler::allBooks)
+                        .GET("/{id}", accept(APPLICATION_JSON), bookHandler::book)
                         .POST("", bookHandler::createBook)
                         .POST("/{id}/reduce-stock/{total}", bookHandler::reduceStock))
                 .build();
