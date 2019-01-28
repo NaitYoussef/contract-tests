@@ -27,7 +27,7 @@ import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest
 @AutoConfigureWebTestClient
 public class InventoryApplicationTests {
 

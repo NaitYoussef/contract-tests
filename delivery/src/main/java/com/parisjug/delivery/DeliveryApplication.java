@@ -1,6 +1,5 @@
 package com.parisjug.delivery;
 
-import com.parisjug.delivery.messages.TextPlainMessageConverter;
 import com.parisjug.delivery.model.LogMessage;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

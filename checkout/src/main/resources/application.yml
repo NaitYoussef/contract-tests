@@ -1,5 +1,26 @@
 server:
   port: 8081
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          content-type: application/json
+          destination: queue.delivery.orders
+          binder: local_rabbit
+      binders:
+        local_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+                virtual-host: /
+
 stubrunner:
   ids: 'com.parisjug:inventory:+:stubs:8080'
   repositoryRoot: http://your-nexus-repo
