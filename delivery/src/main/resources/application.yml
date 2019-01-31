@@ -1,19 +1,15 @@
 server:
   port: 8082
-  
+
 spring:
   cloud:
     stream:
       bindings:
-        input:
+        orders:
           content-type: application/json
-          destination: queue.log.messages
+          destination: queue.delivery.orders
           binder: local_rabbit
-          group: logMessageConsumers
-        output:
-          content-type: application/json
-          destination: queue.pretty.log.messages
-          binder: local_rabbit
+          group: orderMessageConsumers
       binders:
         local_rabbit:
           type: rabbit
@@ -25,3 +21,11 @@ spring:
                 username: guest
                 password: guest
                 virtual-host: /
+
+#stubrunner:
+#  repositoryRoot: http://your-nexus-repo
+#  ids:
+#    - 'com.parisjug:inventory:+:stubs:8080'
+#    - 'com.parisjug:checkout'
+#  amqp:
+#    enabled: true

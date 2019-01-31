@@ -61,6 +61,14 @@
 			<artifactId>spring-cloud-stream-test-support</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- to add -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>spring-web-test-client</artifactId>
+			<version>3.3.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
@@ -80,6 +88,17 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
+				<version>2.1.0.RELEASE</version>
+				<extensions>true</extensions>
+				<configuration>
+					<testMode>WEBTESTCLIENT</testMode>
+					<testFramework>JUNIT</testFramework>
+					<baseClassForTests>com.parisjug.checkout.contracts.ContractsBase</baseClassForTests>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

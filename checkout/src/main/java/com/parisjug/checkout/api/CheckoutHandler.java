@@ -20,7 +20,7 @@ public class CheckoutHandler {
         this.cashier = cashier;
     }
 
-    public Mono<ServerResponse> checkoutNow(ServerRequest request) {
+    Mono<ServerResponse> checkoutNow(ServerRequest request) {
         Mono<Order> order = cashier.checkoutNow(request.bodyToMono(Order.class));
         return ok().contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromPublisher(order, Order.class));

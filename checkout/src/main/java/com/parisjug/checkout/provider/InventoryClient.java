@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 @Component
-public class ReactiveClientInventory implements Inventory {
+public class InventoryClient implements Inventory {
     private WebClient client = WebClient.create("http://localhost:8080");
 
     @Override
