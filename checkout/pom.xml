@@ -98,6 +98,7 @@
 					<testMode>WEBTESTCLIENT</testMode>
 					<testFramework>JUNIT</testFramework>
 					<baseClassForTests>com.parisjug.checkout.contracts.ContractsBase</baseClassForTests>
+					<convertToYaml>true</convertToYaml>
 				</configuration>
 			</plugin>
 		</plugins>
