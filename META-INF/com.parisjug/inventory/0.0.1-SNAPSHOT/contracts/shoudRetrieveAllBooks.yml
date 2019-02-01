@@ -1,0 +1,49 @@
+---
+request:
+  method: "GET"
+  url: "/books"
+  urlPath: null
+  queryParameters: {}
+  headers:
+    Content-Type: "application/json"
+  cookies: null
+  body: null
+  bodyFromFile: null
+  bodyFromFileAsBytes: null
+  matchers:
+    url: null
+    body: []
+    headers: []
+    queryParameters: []
+    cookies: []
+    multipart: null
+  multipart: null
+response:
+  status: 200
+  headers:
+    Content-Type: "application/json"
+  cookies: null
+  body:
+  - id: "d4d37e73-77a0-4616-8bd2-5ed983d45d14"
+    name: "Java"
+    price: "100"
+    stock: 100
+  - id: "8364948b-6221-4cd8-9fd9-db0d17d45ef8"
+    name: "Kotlin"
+    price: "120"
+    stock: 20
+  bodyFromFile: null
+  bodyFromFileAsBytes: null
+  matchers:
+    body: []
+    headers: []
+    cookies: []
+  async: false
+  fixedDelayMilliseconds: null
+input: null
+outputMessage: null
+description: null
+label: null
+name: "shoudRetrieveAllBooks"
+priority: null
+ignored: false

@@ -1,0 +1,26 @@
+{
+  "id" : "e272a1de-8ebf-4897-bdc2-113744394ff1",
+  "request" : {
+    "url" : "/books",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['price'] == '120')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['name'] == 'Kotlin')]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"price\":\"120\",\"name\":\"Kotlin\",\"id\":\"dc8493d6-e2e3-47da-a806-d1e8ff7cd4df\",\"stock\":0}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "e272a1de-8ebf-4897-bdc2-113744394ff1"
+}

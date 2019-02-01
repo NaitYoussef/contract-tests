@@ -1,0 +1,21 @@
+{
+  "id" : "143b845e-2779-4f54-ae89-c856c8d95629",
+  "request" : {
+    "url" : "/books",
+    "method" : "GET",
+    "headers" : {
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    }
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "[{\"id\":\"d4d37e73-77a0-4616-8bd2-5ed983d45d14\",\"name\":\"Java\",\"price\":\"100\",\"stock\":100},{\"id\":\"8364948b-6221-4cd8-9fd9-db0d17d45ef8\",\"name\":\"Kotlin\",\"price\":\"120\",\"stock\":20}]",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "143b845e-2779-4f54-ae89-c856c8d95629"
+}

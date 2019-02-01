@@ -1,0 +1,21 @@
+{
+  "id" : "d1c25069-98c5-4331-971c-e3a3feb0a673",
+  "request" : {
+    "url" : "/books/d4d37e73-77a0-4616-8bd2-5ed983d45d14",
+    "method" : "GET",
+    "headers" : {
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    }
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"price\":\"100\",\"name\":\"Java\",\"id\":\"d4d37e73-77a0-4616-8bd2-5ed983d45d14\",\"stock\":100}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "d1c25069-98c5-4331-971c-e3a3feb0a673"
+}

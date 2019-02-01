@@ -1,0 +1,39 @@
+---
+request: null
+response: null
+input:
+  messageFrom: null
+  triggeredBy: "sendOrder()"
+  messageHeaders: {}
+  messageBody: null
+  messageBodyFromFile: null
+  messageBodyFromFileAsBytes: null
+  assertThat: null
+  matchers:
+    url: null
+    body: []
+    headers: []
+    queryParameters: []
+    cookies: []
+    multipart: null
+outputMessage:
+  sentTo: "orders"
+  headers:
+    SENDER: "checkout"
+    contentType: "application/json"
+  body:
+    bookId: "d4d37e73-77a0-4616-8bd2-5ed983d45d14"
+    clientId: "yannick"
+    number: 2
+  bodyFromFile: null
+  bodyFromFileAsBytes: null
+  assertThat: null
+  matchers:
+    body: []
+    headers: []
+    cookies: []
+description: null
+label: "should send order"
+name: "shouldForwardOrderToDelivery"
+priority: null
+ignored: false

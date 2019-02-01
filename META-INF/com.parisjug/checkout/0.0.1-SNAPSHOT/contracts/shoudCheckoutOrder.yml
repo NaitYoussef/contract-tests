@@ -1,0 +1,47 @@
+---
+request:
+  method: "POST"
+  url: "/checkout"
+  urlPath: null
+  queryParameters: {}
+  headers:
+    Content-Type: "application/json"
+  cookies: null
+  body:
+    bookId: "d4d37e73-77a0-4616-8bd2-5ed983d45d14"
+    clientId: "yannick"
+    number: 2
+  bodyFromFile: null
+  bodyFromFileAsBytes: null
+  matchers:
+    url: null
+    body: []
+    headers: []
+    queryParameters: []
+    cookies: []
+    multipart: null
+  multipart: null
+response:
+  status: 200
+  headers:
+    Content-Type: "application/json"
+  cookies: null
+  body:
+    bookId: "d4d37e73-77a0-4616-8bd2-5ed983d45d14"
+    clientId: "yannick"
+    number: 2
+  bodyFromFile: null
+  bodyFromFileAsBytes: null
+  matchers:
+    body: []
+    headers: []
+    cookies: []
+  async: false
+  fixedDelayMilliseconds: null
+input: null
+outputMessage: null
+description: null
+label: null
+name: "shoudCheckoutOrder"
+priority: null
+ignored: false

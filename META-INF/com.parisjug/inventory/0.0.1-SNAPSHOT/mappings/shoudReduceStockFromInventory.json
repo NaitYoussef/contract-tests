@@ -1,0 +1,21 @@
+{
+  "id" : "d600665f-cb8a-4214-a4ab-ac79a9562000",
+  "request" : {
+    "url" : "/books/d4d37e73-77a0-4616-8bd2-5ed983d45d14/reduce-stock/2",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    }
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "98",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "d600665f-cb8a-4214-a4ab-ac79a9562000"
+}

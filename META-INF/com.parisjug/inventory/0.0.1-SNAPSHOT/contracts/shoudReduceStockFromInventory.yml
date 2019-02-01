@@ -1,0 +1,41 @@
+---
+request:
+  method: "POST"
+  url: "/books/d4d37e73-77a0-4616-8bd2-5ed983d45d14/reduce-stock/2"
+  urlPath: null
+  queryParameters: {}
+  headers:
+    Content-Type: "application/json"
+  cookies: null
+  body: null
+  bodyFromFile: null
+  bodyFromFileAsBytes: null
+  matchers:
+    url: null
+    body: []
+    headers: []
+    queryParameters: []
+    cookies: []
+    multipart: null
+  multipart: null
+response:
+  status: 200
+  headers:
+    Content-Type: "application/json"
+  cookies: null
+  body: "98"
+  bodyFromFile: null
+  bodyFromFileAsBytes: null
+  matchers:
+    body: []
+    headers: []
+    cookies: []
+  async: false
+  fixedDelayMilliseconds: null
+input: null
+outputMessage: null
+description: null
+label: null
+name: "shoudReduceStockFromInventory"
+priority: null
+ignored: false

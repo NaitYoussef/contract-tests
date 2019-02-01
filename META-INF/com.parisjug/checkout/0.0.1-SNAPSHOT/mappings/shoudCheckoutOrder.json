@@ -1,0 +1,28 @@
+{
+  "id" : "83929f12-7eaf-495f-9887-6cfa65bf83b5",
+  "request" : {
+    "url" : "/checkout",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['number'] == 2)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['clientId'] == 'yannick')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['bookId'] == 'd4d37e73-77a0-4616-8bd2-5ed983d45d14')]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"number\":2,\"clientId\":\"yannick\",\"bookId\":\"d4d37e73-77a0-4616-8bd2-5ed983d45d14\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "83929f12-7eaf-495f-9887-6cfa65bf83b5"
+}
