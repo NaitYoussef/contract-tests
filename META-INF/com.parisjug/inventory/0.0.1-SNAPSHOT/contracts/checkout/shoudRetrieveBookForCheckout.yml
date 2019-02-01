@@ -1,0 +1,45 @@
+---
+request:
+  method: "GET"
+  url: "/books/d4d37e73-77a0-4616-8bd2-5ed983d45d14"
+  urlPath: null
+  queryParameters: {}
+  headers:
+    Content-Type: "application/json"
+  cookies: null
+  body: null
+  bodyFromFile: null
+  bodyFromFileAsBytes: null
+  matchers:
+    url: null
+    body: []
+    headers: []
+    queryParameters: []
+    cookies: []
+    multipart: null
+  multipart: null
+response:
+  status: 200
+  headers:
+    Content-Type: "application/json"
+  cookies: null
+  body:
+    id: "d4d37e73-77a0-4616-8bd2-5ed983d45d14"
+    name: "Java"
+    price: "100"
+    stock: 100
+  bodyFromFile: null
+  bodyFromFileAsBytes: null
+  matchers:
+    body: []
+    headers: []
+    cookies: []
+  async: false
+  fixedDelayMilliseconds: null
+input: null
+outputMessage: null
+description: null
+label: null
+name: "shoudRetrieveBook"
+priority: null
+ignored: false
