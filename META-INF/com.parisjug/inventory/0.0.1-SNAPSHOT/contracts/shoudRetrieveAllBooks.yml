@@ -31,7 +31,7 @@ response:
   - id: "8364948b-6221-4cd8-9fd9-db0d17d45ef8"
     name: "Kotlin"
     price: "120"
-    stock: 20
+    stock: 40
   bodyFromFile: null
   bodyFromFileAsBytes: null
   matchers:
