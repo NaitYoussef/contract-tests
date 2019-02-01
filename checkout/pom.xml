@@ -95,10 +95,16 @@
 				<version>2.1.0.RELEASE</version>
 				<extensions>true</extensions>
 				<configuration>
+                    <contractsMode>REMOTE</contractsMode>
+                    <contractsRepositoryUrl>git://https://github.com/ygrenzinger/contract-tests.git</contractsRepositoryUrl>
+                    <contractDependency>
+                        <groupId>com.parisjug</groupId>
+                        <artifactId>checkout</artifactId>
+                        <version>+</version>
+                    </contractDependency>
 					<testMode>WEBTESTCLIENT</testMode>
 					<testFramework>JUNIT</testFramework>
 					<baseClassForTests>com.parisjug.checkout.contracts.ContractsBase</baseClassForTests>
-					<convertToYaml>true</convertToYaml>
 				</configuration>
 			</plugin>
 		</plugins>

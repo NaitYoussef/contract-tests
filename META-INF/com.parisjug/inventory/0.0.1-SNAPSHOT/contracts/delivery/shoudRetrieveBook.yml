@@ -27,7 +27,7 @@ response:
     id: "d4d37e73-77a0-4616-8bd2-5ed983d45d14"
     name: "Java"
     price: "100"
-    stock: 100
+    stock: 10
   bodyFromFile: null
   bodyFromFileAsBytes: null
   matchers:

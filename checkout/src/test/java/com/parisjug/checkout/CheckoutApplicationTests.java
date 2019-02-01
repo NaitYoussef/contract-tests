@@ -29,7 +29,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 @AutoConfigureStubRunner(
         ids = {"com.parisjug:inventory:+:stubs:8080"},
-        stubsMode = StubRunnerProperties.StubsMode.LOCAL)
+        stubsMode = StubRunnerProperties.StubsMode.LOCAL,
+        stubsPerConsumer = true)
 @AutoConfigureWebTestClient
 public class CheckoutApplicationTests {
 

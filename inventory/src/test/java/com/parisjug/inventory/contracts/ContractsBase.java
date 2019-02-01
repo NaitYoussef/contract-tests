@@ -34,7 +34,7 @@ public class ContractsBase {
     @Before
     public void before() {
         Book java = new Book("d4d37e73-77a0-4616-8bd2-5ed983d45d14", "Java", BigDecimal.valueOf(100), 100);
-        Book kotlin = new Book("8364948b-6221-4cd8-9fd9-db0d17d45ef8", "Kotlin", BigDecimal.valueOf(120), 20);
+        Book kotlin = new Book("8364948b-6221-4cd8-9fd9-db0d17d45ef8", "Kotlin", BigDecimal.valueOf(120), 40);
         bookInventory.addBook(java);
         bookInventory.addBook(kotlin);
 

@@ -2,6 +2,8 @@ server:
   port: 8081
 
 spring:
+  application:
+    name: checkout
   cloud:
     stream:
       bindings:
@@ -20,7 +22,3 @@ spring:
                 username: guest
                 password: guest
                 virtual-host: /
-
-stubrunner:
-  ids: 'com.parisjug:inventory:+:stubs:8080'
-  repositoryRoot: http://your-nexus-repo
