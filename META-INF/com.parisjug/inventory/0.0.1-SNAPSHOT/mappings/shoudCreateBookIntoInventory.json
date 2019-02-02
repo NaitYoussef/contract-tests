@@ -1,5 +1,5 @@
 {
-  "id" : "e272a1de-8ebf-4897-bdc2-113744394ff1",
+  "id" : "b3ea9e3e-2a42-4c96-aeee-cb40e85af9b3",
   "request" : {
     "url" : "/books",
     "method" : "POST",
@@ -22,5 +22,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "e272a1de-8ebf-4897-bdc2-113744394ff1"
+  "uuid" : "b3ea9e3e-2a42-4c96-aeee-cb40e85af9b3"
 }

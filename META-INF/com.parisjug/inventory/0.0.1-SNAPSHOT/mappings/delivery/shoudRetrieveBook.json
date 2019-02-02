@@ -1,5 +1,5 @@
 {
-  "id" : "0b36d50a-0a36-41fc-b6e3-6306e9afdc79",
+  "id" : "a91ee763-2d2d-4bd2-b66a-c4be7537c0e0",
   "request" : {
     "url" : "/books/d4d37e73-77a0-4616-8bd2-5ed983d45d14",
     "method" : "GET",
@@ -17,5 +17,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "0b36d50a-0a36-41fc-b6e3-6306e9afdc79"
+  "uuid" : "a91ee763-2d2d-4bd2-b66a-c4be7537c0e0"
 }
