@@ -1,7 +1,7 @@
 package contracts
 
 org.springframework.cloud.contract.spec.Contract.make {
-    label 'should send order'
+    label '(groovy)should send order'
     input {
         triggeredBy('sendOrder()')
     }
