@@ -1,9 +1,11 @@
 package com.parisjug.checkout.domain;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 @Service
+@Slf4j
 public class Cashier {
     private final Inventory inventory;
     private final Delivery delivery;
@@ -27,6 +29,8 @@ public class Cashier {
                         return Mono.error(new NoMoreStockException());
                     }
                      return Mono.fromSupplier(() -> order);
+                }).doOnError(e -> {
+                    log.error(e.getMessage(), e);
                 });
     }
 }

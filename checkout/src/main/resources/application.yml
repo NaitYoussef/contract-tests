@@ -22,3 +22,10 @@ spring:
                 username: guest
                 password: guest
                 virtual-host: /
+
+stubrunner:
+  ids: 'com.parisjug:inventory:+:stubs:8080'
+  repository-root: 'git://https://github.com/ygrenzinger/contract-tests.git'
+  stubs-per-consumer: true
+  consumer-name: 'checkout'
+  stubs-mode: remote

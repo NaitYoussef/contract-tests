@@ -21,7 +21,8 @@ public class CheckoutHandler {
     }
 
     Mono<ServerResponse> checkoutNow(ServerRequest request) {
-        Mono<Order> order = cashier.checkoutNow(request.bodyToMono(Order.class));
+        Mono<Order> body = request.bodyToMono(Order.class);
+        Mono<Order> order = cashier.checkoutNow(body);
         return ok().contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromPublisher(order, Order.class));
     }

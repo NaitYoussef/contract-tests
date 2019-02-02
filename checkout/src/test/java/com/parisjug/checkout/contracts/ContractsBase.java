@@ -17,10 +17,7 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@AutoConfigureStubRunner(
-        ids = {"com.parisjug:inventory:+:stubs:8080"},
-        stubsMode = StubRunnerProperties.StubsMode.LOCAL,
-        stubsPerConsumer = true)
+@AutoConfigureStubRunner
 @AutoConfigureMessageVerifier
 @AutoConfigureWebTestClient
 public class ContractsBase {

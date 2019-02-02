@@ -23,8 +23,9 @@ import static org.assertj.core.api.Assertions.assertThat;
                 "com.parisjug:inventory:+:stubs:8080",
                 "com.parisjug:checkout"
         },
-        stubsMode = StubRunnerProperties.StubsMode.LOCAL)
-public class DeliveryApplicationTests {
+        stubsMode = StubRunnerProperties.StubsMode.REMOTE,
+        repositoryRoot = "git://https://github.com/ygrenzinger/contract-tests.git")
+public class ProcessOrderContractTests {
 
     @Autowired
     private Streams streams;
@@ -33,7 +34,7 @@ public class DeliveryApplicationTests {
     private DeliveryQueue deliveryQueue;
 
     @Autowired
-    StubTrigger stubTrigger;
+    private StubTrigger stubTrigger;
 
     @Before
     public void before() {
@@ -42,19 +43,9 @@ public class DeliveryApplicationTests {
 
     @Test
     public void should_correctly_process_order() {
-        Order order = new Order("d4d37e73-77a0-4616-8bd2-5ed983d45d14", 2, "yannick");
-        streams.orders().send(MessageBuilder.withPayload(order).build());
-        assertThat(deliveryQueue.ordersInProcess()).containsExactly(order);
-
-    }
-
-    @Test
-    public void should_correctly_process_order_with_contract_testing() {
         stubTrigger.trigger("should send order");
-
         Order order = new Order("d4d37e73-77a0-4616-8bd2-5ed983d45d14", 2, "yannick");
         assertThat(deliveryQueue.ordersInProcess()).containsExactly(order);
-
     }
 
 }
