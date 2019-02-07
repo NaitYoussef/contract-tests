@@ -2,7 +2,7 @@ package com.parisjug.inventory.api;
 
 import com.parisjug.inventory.domain.Book;
 import com.parisjug.inventory.domain.BookIdGenerator;
-import com.parisjug.inventory.infra.InMemoryBookInventory;
+import com.parisjug.inventory.provider.InMemoryBookInventory;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.BodyInserters;
@@ -22,6 +22,7 @@ public class BookHandler {
         this.bookInventory = bookInventory;
         this.bookIdGenerator = bookIdGenerator;
     }
+    
     Mono<ServerResponse> allBooks(ServerRequest request) {
         return ok().contentType(MediaType.APPLICATION_JSON)
                 .body(bookInventory.allBooks(), Book.class);

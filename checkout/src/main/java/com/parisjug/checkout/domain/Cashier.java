@@ -26,7 +26,7 @@ public class Cashier {
                     if (book.getStock() < order.getNumber()) {
                         return Mono.error(new NoMoreStockException());
                     }
-                     return Mono.fromSupplier(() -> order);
+                    return Mono.fromSupplier(() -> order);
                 });
     }
 }

@@ -14,7 +14,7 @@ public class InventoryClient implements Inventory {
     @Override
     public Mono<Book> retrieveBook(String bookId) {
         return client.get()
-                .uri("/books/{id}", bookId)
+                .uri("/v1/books/{id}", bookId)
                 .accept(MediaType.APPLICATION_JSON)
                 .header("Content-Type", "application/json")
                 .retrieve()

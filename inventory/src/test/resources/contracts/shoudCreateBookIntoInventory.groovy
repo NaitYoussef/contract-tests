@@ -3,7 +3,7 @@ package contracts
 org.springframework.cloud.contract.spec.Contract.make {
     request {
         method 'POST'
-        url '/books'
+        url '/v1/books'
         body("""
         {
             "name": "Kotlin",

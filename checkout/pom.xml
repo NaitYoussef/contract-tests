@@ -15,7 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 		<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
 	</properties>
 
@@ -34,6 +34,10 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-stream-reactive</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
 		</dependency>
 
 		<dependency>
@@ -62,11 +66,15 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- to add -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>spring-web-test-client</artifactId>
 			<version>3.3.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -90,15 +98,23 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<release>11</release>  <!--or <release>10</release>-->
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
 				<version>2.1.0.RELEASE</version>
 				<extensions>true</extensions>
 				<configuration>
 					<testMode>WEBTESTCLIENT</testMode>
-					<testFramework>JUNIT</testFramework>
+					<testFramework>JUNIT5</testFramework>
 					<baseClassForTests>com.parisjug.checkout.contracts.ContractsBase</baseClassForTests>
-					<convertToYaml>true</convertToYaml>
+					<!--<convertToYaml>true</convertToYaml>-->
 				</configuration>
 			</plugin>
 		</plugins>

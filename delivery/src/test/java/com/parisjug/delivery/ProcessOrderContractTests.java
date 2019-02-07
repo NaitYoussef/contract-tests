@@ -2,21 +2,19 @@ package com.parisjug.delivery;
 
 import com.parisjug.delivery.domain.DeliveryQueue;
 import com.parisjug.delivery.domain.Order;
-import com.parisjug.delivery.provider.Streams;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cloud.contract.stubrunner.StubTrigger;
 import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
 import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties;
-import org.springframework.messaging.support.MessageBuilder;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 @AutoConfigureStubRunner(
         ids = {
@@ -24,10 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
                 "com.parisjug:checkout"
         },
         stubsMode = StubRunnerProperties.StubsMode.LOCAL)
-public class DeliveryApplicationTests {
-
-    @Autowired
-    private Streams streams;
+class ProcessOrderContractTests {
 
     @Autowired
     private DeliveryQueue deliveryQueue;
@@ -35,23 +30,14 @@ public class DeliveryApplicationTests {
     @Autowired
     StubTrigger stubTrigger;
 
-    @Before
-    public void before() {
+    @BeforeEach
+    void before() {
         deliveryQueue.clear();
     }
 
     @Test
-    public void should_correctly_process_order() {
-        Order order = new Order("d4d37e73-77a0-4616-8bd2-5ed983d45d14", 2, "yannick");
-        streams.orders().send(MessageBuilder.withPayload(order).build());
-        assertThat(deliveryQueue.ordersInProcess()).containsExactly(order);
-
-    }
-
-    @Test
-    public void should_correctly_process_order_with_contract_testing() {
+    void should_correctly_process_order() {
         stubTrigger.trigger("should send order");
-
         Order order = new Order("d4d37e73-77a0-4616-8bd2-5ed983d45d14", 2, "yannick");
         assertThat(deliveryQueue.ordersInProcess()).containsExactly(order);
 
