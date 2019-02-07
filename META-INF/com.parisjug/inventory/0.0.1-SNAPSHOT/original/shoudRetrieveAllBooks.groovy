@@ -3,7 +3,7 @@ package contracts
 org.springframework.cloud.contract.spec.Contract.make {
     request {
         method 'GET'
-        url '/books'
+        url '/v1/v1/books'
         headers {
             header('Content-Type', 'application/json')
         }

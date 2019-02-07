@@ -1,7 +1,7 @@
 ---
 request:
   method: "POST"
-  url: "/books"
+  url: "/v1/books"
   urlPath: null
   queryParameters: {}
   headers:

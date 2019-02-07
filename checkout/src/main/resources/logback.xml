@@ -7,6 +7,7 @@
         </encoder>
     </appender>
 
+    <logger name="com.parisjug" level="INFO" />
     <root level="INFO">
         <appender-ref ref="STDOUT" />
     </root>

@@ -13,7 +13,7 @@ public class CheckoutRouter {
     @Bean
     public RouterFunction<ServerResponse> router(CheckoutHandler checkoutHandler) {
         return route()
-                .path("/checkout", builder -> builder
+                .path("/v1/checkout", builder -> builder
                         .POST("", checkoutHandler::checkoutNow))
                 .build();
     }

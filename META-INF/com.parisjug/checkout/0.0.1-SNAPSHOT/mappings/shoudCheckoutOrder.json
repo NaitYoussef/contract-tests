@@ -1,7 +1,7 @@
 {
   "id" : "83929f12-7eaf-495f-9887-6cfa65bf83b5",
   "request" : {
-    "url" : "/checkout",
+    "url" : "/v1/checkout",
     "method" : "POST",
     "headers" : {
       "Content-Type" : {

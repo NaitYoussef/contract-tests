@@ -15,7 +15,7 @@ public class BookRouter {
     @Bean
     public RouterFunction<ServerResponse> router(BookHandler bookHandler) {
         return route()
-                .path("/books", builder -> builder
+                .path("/v1/books", builder -> builder
                         .GET("", accept(APPLICATION_JSON), bookHandler::allBooks)
                         .GET("/{id}", accept(APPLICATION_JSON), bookHandler::book)
                         .POST("", bookHandler::createBook)

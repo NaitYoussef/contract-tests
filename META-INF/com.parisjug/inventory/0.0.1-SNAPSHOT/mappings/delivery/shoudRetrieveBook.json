@@ -1,7 +1,7 @@
 {
   "id" : "a91ee763-2d2d-4bd2-b66a-c4be7537c0e0",
   "request" : {
-    "url" : "/books/d4d37e73-77a0-4616-8bd2-5ed983d45d14",
+    "url" : "/v1/books/d4d37e73-77a0-4616-8bd2-5ed983d45d14",
     "method" : "GET",
     "headers" : {
       "Content-Type" : {

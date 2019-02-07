@@ -1,7 +1,7 @@
 {
   "id" : "b3ea9e3e-2a42-4c96-aeee-cb40e85af9b3",
   "request" : {
-    "url" : "/books",
+    "url" : "/v1/books",
     "method" : "POST",
     "headers" : {
       "Content-Type" : {

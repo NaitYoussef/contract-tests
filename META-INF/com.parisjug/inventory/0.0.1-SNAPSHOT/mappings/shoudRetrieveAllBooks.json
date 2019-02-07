@@ -1,7 +1,7 @@
 {
   "id" : "11b88113-2446-4327-8802-76c2c0a131b2",
   "request" : {
-    "url" : "/books",
+    "url" : "/v1/books",
     "method" : "GET",
     "headers" : {
       "Content-Type" : {

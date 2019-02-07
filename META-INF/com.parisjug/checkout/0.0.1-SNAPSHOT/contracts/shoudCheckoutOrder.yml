@@ -1,7 +1,7 @@
 ---
 request:
   method: "POST"
-  url: "/checkout"
+  url: "/v1/checkout"
   urlPath: null
   queryParameters: {}
   headers:

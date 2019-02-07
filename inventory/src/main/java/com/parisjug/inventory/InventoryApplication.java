@@ -16,12 +16,7 @@ public class InventoryApplication {
 
 	@Bean
 	public BookIdGenerator bookIdGenerator() {
-		return new BookIdGenerator() {
-			@Override
-			public String randomId() {
-				return UUID.randomUUID().toString();
-			}
-		};
+		return () -> UUID.randomUUID().toString();
 	}
 
 }
